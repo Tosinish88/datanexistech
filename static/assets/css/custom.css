@@ -1,0 +1,178 @@
+.widthh{
+    width: 100px;
+}
+.widthh90{
+    width: 90px;
+}
+.widthh80{
+    width: 80px;
+}
+
+
+
+.goog-te-gadget .goog-te-combo {
+    /* margin: 6px 0 0 !important; */
+    border-radius: 8px !important;
+    padding: 7px 3px !important;
+    border: 1px solid #dad7d7 !important;
+  }
+  .goog-te-gadget {
+    font-family: arial;
+    font-size: 11px;
+    color: #6660 !important;
+    white-space: nowrap;
+  }
+  .goog-te-combo, .goog-te-banner *, .goog-te-ftab *, .goog-te-menu *, .goog-te-menu2 *, .goog-te-balloon * {
+    font-family: arial;
+    font-size: 7pt !important; 
+  }
+.goog-logo-link, .goog-logo-link:link, .goog-logo-link:visited, .goog-logo-link:hover, .goog-logo-link:active {
+    font-size: 3px;
+    font-weight: bold;
+    color: #4440 !important;  /* makes the text dissapear */
+    /* display: none !important; */
+    text-decoration: none;
+    visibility: hidden !important;
+  }
+  .goog-logo-link img{
+    width: 34px;
+    /* display: none !important; */
+  }
+  select {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #999;
+    font-size: 14px;
+    /* height: 27px; */
+    line-height: 36px;
+    padding: 3px !important;
+    width: 90%;
+    border: 1px solid #e4e4e4 !important;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 6px;
+    font-weight: 400;
+  }
+select.catvendor {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #999;
+    font-size: 14px;
+    /* height: 27px; */
+    line-height: 36px;
+    padding: 0px 4px;
+    width: 100%;
+    border: 1px solid #c0bbbb;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
+  
+  #google_translate_element{
+    width: 100px !important;
+    /* height: 58px !important; */
+  }
+  .goog-logo-link img{
+    display: none !important; 
+  }
+.VIpgJd-ZVi9od-l4eHX-hSRGPd, .VIpgJd-ZVi9od-l4eHX-hSRGPd:link, .VIpgJd-ZVi9od-l4eHX-hSRGPd:visited, .VIpgJd-ZVi9od-l4eHX-hSRGPd:hover, .VIpgJd-ZVi9od-l4eHX-hSRGPd:active {
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+    visibility: hidden !important;
+    display: none !important;
+  }
+  .VIpgJd-ZVi9od-ORHb-OEVmcd {
+    left: 0px;
+    top: 0px;
+    height: 39px;
+    width: 100%;
+    z-index: 10000001;
+    position: fixed;
+    border-top-width: initial;
+    border-right-width: initial;
+    border-left-width: initial;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-left-color: initial;
+    box-shadow: rgb(153, 153, 153) 0px 0px 8px 1px;
+    visibility: hidden !important;
+    border-style: none none solid;
+    border-image: initial;
+    border-bottom: 1px solid rgb(107, 144, 218);
+    margin: 0px;
+  }
+
+/* Ggggle Translate MAX WIDTH 480 */
+@media only screen and (max-width: 480px) {
+    .goog-te-combo, .goog-te-banner *, .goog-te-ftab *, .goog-te-menu *, .goog-te-menu2 *, .goog-te-balloon * {
+      font-family: arial;
+      font-size: 7pt !important;
+    }
+      a.get-start-btn{
+          display: block;
+          margin-top: 15px !important;
+          margin-left: 0 !important;
+      }
+      .main-search-bar{
+          padding-top: 100px !important;
+          padding-bottom: 50px !important;
+          background-position: left !important;
+      }
+      .user-dashboard{
+          width: 100% !important;
+      }
+      .menu-itam-holder .quantity{
+          right: 0 !important;
+          margin-top: -30px !important;
+      }
+      .table.opening_hours{
+          width: 100% !important;
+      }
+      .table td{
+          padding: 0.5rem !important;
+      }
+      #google_translate_element {
+        width: 100px !important;
+    }
+  }
+/* END GOOGLE TRANSLATE CSS ============================ */ 
+
+  
+  .googTrans {
+    display: inline;
+    bottom: 26px;
+    color: #ffffff;
+    /* display: none; */
+    font-size: 24px;
+    /* line-height: 1.5em; */
+    /* padding: 3px 6px; */
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    z-index: 99999;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    /* background-color: #f25050a1; */
+    border-radius: 8px;
+}
+/* END GOOGLE TRANSLATE CSS ============================ */ 
+
+
+
+.spacce{
+    display: flex;
+    justify-content: center;
+}
+
+.spaccee{
+    display: flex;
+    align-content: center;
+    align-items: center;
+}

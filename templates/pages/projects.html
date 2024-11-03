@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Home Banner -->
+<section class="section section-search3 spaccee">
+    <div class="container">
+        <div class="banner-wrapper m-auto text-center aos" data-aos="fade-up" style="z-index: 3;">
+            <div class="banner-header">
+                <h1> <span>Projects</span></h1>
+                <!-- <p>Discover the best Mentors & institutions the city nearest to you.</p> -->
+                <!-- <p></p> -->
+            </div>
+			
+             
+            <!-- Search -->
+            <!-- <div class="search-box">
+                <form action="search.html">
+                    <div class="form-group search-location">
+                        <input type="text" class="form-control" placeholder="Search Location">
+                    </div>
+                    <div class="form-group search-info">
+                        <input type="text" class="form-control" placeholder="Search School, Online educational centers, etc">
+                    </div>
+                    <button type="submit" class="btn btn-primary search-btn"><i><img src="assets/img/search-submit.png" alt=""></i> <span>Search</span></button>
+                </form>
+            </div> -->
+            <!-- /Search -->
+            
+        </div>
+    </div>
+	<div id="overlayyy"></div>
+</section>
+<!-- /Home Banner -->
+
+<!-- Path section start -->
+<section class="section path-section-eight">
+    <div class="section-header-eight text-center aos" data-aos="fade-up">
+        <!-- <div class="container">
+            <span>WHAT WE DO</span>
+            <h2>WE DELIVER IN BESPOKE QUALITY</h2>
+            <p class="sub-title">Are you looking to join online institutions? Now it's very simple, Sign up with mentoring</p>
+            <div class="sec-dots">
+                 <span></span>
+                 <span></span>
+                 <span></span>
+            </div>
+        </div> -->
+        <div class="section-header h-three text-center aos " data-aos="fade-up">
+            <!-- <h2>Our Projects</h2> -->
+            <p class="sub-title">At Datanexis, we pride ourselves on our diverse portfolio of innovative projects that drive progress and deliver exceptional value to our clients. Here are some of the key projects we are working on: </p>
+        </div>
+    </div>
+    <div class="course-sec">
+        <div class="container">
+            <div class="row">
+                <!-- Course Item -->
+                <div class="col-md-4 col-sm-4  aos" data-aos="fade-up">
+                    <div class="course-item">
+                        <a href="#" class="course-img">
+                            <div class="image-col-merge">
+                                <img src="{% static 'assets/img/course/course-08.jpg' %}" alt="learn">
+                                <div class="course-text">
+                                    <h5>Digital Marketer</h5>
+                                    <!-- <div class="d-flex justify-content-between">
+                                        <p>400 Mentors</p>
+                                        <p>10 Courses</p>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- /Course Item -->
+                
+                <!-- Course Item      col-12 col-md-6 col-lg-3-->
+                <div class="col-md-4 col-sm-4 aos" data-aos="fade-up">
+                    <div class="course-item">
+                        <a href="#" class="course-img">
+                            <div class="image-col-merge">
+                                <img src="{% static 'assets/img/course/course-08.jpg' %}" alt="learn">
+                                <div class="course-text">
+                                    <h5>Ui designer</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- /Course Item -->
+                
+                <!-- Course Item -->
+                <div class="col-md-4 col-sm-4  aos" data-aos="fade-up">
+                    <div class="course-item">
+                        <a href="#" class="course-img">
+                            <div class="image-col-merge">
+                                <img src="{% static 'assets/img/course/course-08.jpg' %}" alt="learn">
+                                <div class="course-text">
+                                    <h5>IT Security</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- /Course Item -->
+                
+                <!-- Course Item -->
+                <div class="col-md-4 col-sm-4  aos" data-aos="fade-up">
+                    <div class="course-item">
+                        <a href="#" class="course-img">
+                            <div class="image-col-merge">
+                                <img src="{% static 'assets/img/course/course-08.jpg' %}" alt="learn">
+                                <div class="course-text">
+                                    <h5>Fullstack Web Application</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- /Course Item -->
+                
+            </div>
+            <!-- <div class="view-all text-center aos" data-aos="fade-up">
+                <a href="search.html" class="btn btn-primary btn-view">View All</a>
+            </div>						 -->
+        </div>
+    </div>
+</section>
+<!-- Path section end -->
+
+{% endblock content %}

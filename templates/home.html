@@ -1,0 +1,438 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Home Banner -->
+<section class=" home-slide home-slide-three d-flex align-items-center">
+    <div class="container" style="z-index: 3;">
+        <div class="row ">
+            <div class="col-md-6 d-flex align-items-center" style="padding-left: 50px;">
+                <div class="section-banner-three aos " data-aos="fade-up">
+                    <div class="hometwo-slide-text ">
+                        <h1>Established with a <br>vision to revolutionize <br>the digital landscape,</h1>
+                        <!-- <p>Own your future learning new skills online</p> -->
+                    </div>
+                    <!-- Search -->
+                    <div class="search-box">
+                        <form action="search.html">
+                            <div class="form-group search-info location-search">  <!--  -->
+                                <input type="text" class="form-control text-truncate" placeholder="Search... ">
+                                <a href="search.html" class="btn bg-search search-btn align-items-center d-flex justify-content-center">Search</a>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /Search -->
+                </div>
+            </div>
+            <div class="col-md-6" style="display: flex; align-items: center; justify-content: center;">
+                <div class="object-slide-img aos " data-aos="fade-up" style="width: 340px;">
+                    <!-- <img src="{% static 'assets/img/object-4.png' %} " alt=""> -->
+                    <img src="{% static 'assets/img/user/topp.png' %} " alt="">
+                    <!-- <img src="{% static 'assets/img/categories/white-dotted.svg' %} " alt=""> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlayyy"></div>
+</section>
+<!-- /Home Banner -->
+
+
+
+
+<!-- Course Categories -->
+<section class="most-popular course-categories-three">
+    <div class="container">
+        <div class="section-header-eight text-center aos" data-aos="fade-up">
+            <div class="container">
+                <span>WHAT WE DO</span>
+                <h2>WE DELIVER IN BESPOKE PROFICIENCY</h2>
+                <!-- <p class="sub-title">Are you looking to join online institutions? Now it's very simple, Sign up with mentoring</p> -->
+                <div class="sec-dots">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="popular-categories aos pt-3" data-aos="fade-up">
+            <div class="row">
+                {% for i in allServices %}
+                <div class="col-lg-3 col-md-4">
+                    <a href="{% url 'single_service' i.service.slug %}">
+                        <div class="sub-categories bg-design align-items-center">
+                            <!-- <div class="course-bg">
+                                <img src="{% static 'assets/img/course-bg.png' %}" alt="">
+                            </div> -->
+                            <div class="categories-img d-flex justify-content-center align-items-center">
+                                <img class="widthh" src="{% if i.icon %} {{ i.icon.url }} {%else%} {% static 'assets/img/categories/cate-7.png' %} {%endif%}" alt="">
+                            </div>
+                            <div class="categories-text text-center">
+                                <h4>{{ i.service.title }}</h4>
+                                <!-- <p class="course-count">22 Courses</p> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
+            <!--     
+                <div class="col-lg-3 col-md-4">
+                    <a href="#">
+                        <div class="sub-categories bg-photography align-items-center">
+                            <div class="course-develop-bg">
+                                <img src="{% static 'assets/img/course-develop-bg.png' %}" alt="">
+                            </div>
+                            <div class="categories-img d-flex justify-content-center align-items-center">
+                                <img class="widthh" src="{% static 'assets/img/categories/cate-55.png' %}" alt="">
+                            </div>
+                            <div class="categories-text text-center">
+                                <h4>Web Apps</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div> 
+            -->
+               
+            </div>
+        </div>
+        <!-- <div class="explore-more text-center aos " data-aos="fade-up">
+            <a href="search.html" class="btn bg-explore">Show All Categories</a>
+        </div> -->
+    </div>
+</section>
+<!-- /Course Categories -->
+
+
+
+
+<!-- Statistics Section -->
+<section class="section statistics-section mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="statistics-list text-center aos" data-aos="fade-up">
+                    <span>50+</span>
+                    <h3>Happy Clients</h3>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="statistics-list text-center aos" data-aos="fade-up">
+                    <span>20+</span>
+                    <h3>Online Appointments</h3>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="statistics-list text-center aos" data-aos="fade-up">
+                    <span>100%</span>
+                    <h3>Job Satisfaction</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Statistics Section -->
+
+
+
+
+<!-- Share Your Knowledge -->
+<section class="share-knowledge-three">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center ">
+                <div class="knowledge-img-three aos " data-aos="fade-up">
+                    <img src="{% static 'assets/img/join-3.png' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="join-us-all aos " data-aos="fade-up">
+                    <div class="join-us-heading">
+                        <h2>Software Development <br> </h2>
+                        <p>
+                            DataNexis is a software development company with developers packing 30+ years of experience. We can develop reliable, scalable and secure software solutions for any OS, browser and device. We bring together deep 
+                            industry expertise and the latest IT advancements to deliver custom solutions and products that perfectly fit the needs and behavior of their users.
+                        </p>
+                    </div>
+                    <div class="join-two-face">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="best-course-three">
+                                    <h4> Innovation</h4>
+                                    <p>
+                                        Our team can assist you in transforming your business 
+                                        with the latest tech capabilities to stay ahead of the curve.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="best-course-three">
+                                    <h4>Top Notch</h4>
+                                    <p>
+                                        We deliver top-quality, secure, and adaptable digital solutions that satisfy 
+                                        the needs of today and unlock the opportunities of tomorrow.
+                                    </p>
+                                    <div class="popular-three-bg">
+                                        <img src="{% static 'assets/img/popular-bg.png' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explore-more ">
+                            <a href="{% url 'about' %}" class="btn bg-explore">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Share Your Knowledge -->
+
+
+
+
+<!-- Tabs -->
+<section class="comp-section">
+    <div class="container mt-5">
+        <div class="row">
+            <!-- <div class="comp-header pt-5">
+                <h3 class="comp-title">OUR QUALITIES</h3>
+                <div class="line"></div>
+            </div> -->
+
+            <div class="section-header section-head-left aos " data-aos="fade-up">
+                <h2>Our Qualities</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-center">How we stand out</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-tabs-top"> <!-- nav-justified -->
+                                <li class="nav-item"><a class="nav-link active" href="#top-justified-tab1" data-bs-toggle="tab">Values</a></li>
+                                <!-- <li class="nav-item"><a class="nav-link" href="#top-justified-tab2" data-bs-toggle="tab">Profile</a></li> -->
+                                <li class="nav-item"><a class="nav-link" href="#top-justified-tab3" data-bs-toggle="tab">Competitive Advantage</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane show active" id="top-justified-tab1">
+                                    <ul>
+                                        <li class="pb-3"><b>Innovation:</b>  We thrive on pushing the boundaries of what's possible. We encourage creativity, experimentation, and thinking outside the box to drive technological advancement.</li>
+                                        <li class="pb-3"><b>Excellence:</b>  We are committed to delivering high-quality software solutions that exceed expectations. We pursue excellence in everything we do, from design and development to implementation and support.</li>
+                                        <!-- <li class="pb-3"><b>Collaboration:</b>  We believe in the power of teamwork and collaboration. By fostering an environment of open communication and mutual respect, we leverage the diverse skills and perspectives of our team members to achieve shared goals.</li> -->
+                                        <li class="pb-3"><b>Customer-Centricity:</b>  Our customers are at the heart of everything we do. We listen actively, understand their needs, and strive to deliver solutions that provide real value and exceed their expectations.</li>
+                                        <li class="pb-3"><b>Integrity:</b>  We conduct ourselves with honesty, transparency, and integrity in all aspects of our work. We take responsibility for our actions, uphold ethical standards, and build trust with our clients, partners, and colleagues.</li>
+                                        <!-- <li class="pb-3"><b>Continuous Learning:</b>  We embrace a culture of continuous learning and growth. We invest in the development of our team members, encourage knowledge sharing, and stay abreast of emerging technologies and industry trends.</li> -->
+                                        <li class="pb-3"><b>Adaptability:</b>  In a rapidly evolving technological landscape, we remain flexible and adaptable. We embrace change, embrace new challenges, and quickly pivot to meet the evolving needs of our clients and the market.</li>
+                                        <li class="pb-3"><b>Sustainability:</b>  We are committed to sustainability in both our practices and products. We strive to minimize our environmental footprint, promote diversity and inclusion, and contribute positively to the communities in which we operate.</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" id="top-justified-tab2">
+                                    Tab content 2
+                                </div>
+
+                                <div class="tab-pane" id="top-justified-tab3">
+                                    <ul>
+                                        <li class="pb-3"><b>Focus on User Experience: </b> We prioritize user experience designs through Intuitive interfaces, seamless interactions, 
+                                            and user-centric design principles to enhance customer satisfaction and loyalty, leading to a competitive advantage in the marketplace.
+                                        </li>
+                                        <li class="pb-3"><b>Scalable Infrastructure: </b> By building scalable and reliable infrastructure, enables our company to handle 
+                                            increasing workloads and user demands without compromise of any sort.
+                                        </li>
+                                        <li class="pb-3"><b>Expertise and Experience:</b>  Our team comprises seasoned professionals with deep expertise and extensive 
+                                            experience in software development, designs, content, security and others. We bring a wealth of knowledge and best practices to every project, 
+                                            ensuring high-quality solutions that meet and exceed client expectations.
+                                        </li>
+                                        <li class="pb-3"><b>Customization and Flexibility:</b> Unlike off-the-shelf solutions, we specialize in providing tailored 
+                                            bespoke solutions, customized to meet the unique requirements of each client. 
+                                            Our flexibility and ability to adapt to diverse business contexts allow us to deliver solutions that truly align with our clients' goals and objectives.
+                                        </li>
+                                    </ul>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Tabs -->
+
+
+
+
+
+<!-- Path section start -->
+<section class="section path-section-eight">
+    <div class="section-header-eight text-center aos" data-aos="fade-up">
+        <!-- <div class="container">
+            <span>WHAT WE DO</span>
+            <h2>WE DELIVER IN BESPOKE QUALITY</h2>
+            <p class="sub-title">Are you looking to join online institutions? Now it's very simple, Sign up with mentoring</p>
+            <div class="sec-dots">
+                 <span></span>
+                 <span></span>
+                 <span></span>
+            </div>
+        </div> -->
+        <div class="section-header h-three text-center aos " data-aos="fade-up">
+            <h2>Our Projects</h2>
+            <p class="sub-title">Coming Soon</p>
+        </div>
+    </div>
+    <div class="course-sec">
+        <div class="container">
+            <div class="row">
+                <!-- Course Item -->
+                <div class="col-md-4 col-sm-4  aos" data-aos="fade-up">
+                    <div class="course-item">
+                        <a href="search.html" class="course-img">
+                            <div class="image-col-merge">
+                                <img src="{% static 'assets/img/course/course-08.jpg' %}" alt="learn">
+                                <div class="course-text">
+                                    <h5>Digital Marketer</h5>
+                                    <!-- <div class="d-flex justify-content-between">
+                                        <p>400 Mentors</p>
+                                        <p>10 Courses</p>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- /Course Item -->
+                
+                <!-- Course Item      col-12 col-md-6 col-lg-3-->
+                <div class="col-md-4 col-sm-4 aos" data-aos="fade-up">
+                    <div class="course-item">
+                        <a href="search.html" class="course-img">
+                            <div class="image-col-merge">
+                                <img src="{% static 'assets/img/course/course-08.jpg' %}" alt="learn">
+                                <div class="course-text">
+                                    <h5>Ui designer</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- /Course Item -->
+                
+                <!-- Course Item -->
+                <div class="col-md-4 col-sm-4  aos" data-aos="fade-up">
+                    <div class="course-item">
+                        <a href="search.html" class="course-img">
+                            <div class="image-col-merge">
+                                <img src="{% static 'assets/img/course/course-08.jpg' %}" alt="learn">
+                                <div class="course-text">
+                                    <h5>IT Security</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- /Course Item -->
+                
+                <!-- Course Item -->
+                <div class="col-md-4 col-sm-4  aos" data-aos="fade-up">
+                    <div class="course-item">
+                        <a href="search.html" class="course-img">
+                            <div class="image-col-merge">
+                                <img src="{% static 'assets/img/course/course-08.jpg' %}" alt="learn">
+                                <div class="course-text">
+                                    <h5>Fullstack Web Application</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- /Course Item -->
+                
+            </div>
+            <div class="view-all text-center aos" data-aos="fade-up">
+                <a href="#" class="btn btn-primary btn-view">View All</a>
+            </div>						
+        </div>
+    </div>
+</section>
+<!-- Path section end -->
+
+
+
+
+
+
+<!-- Student Feedback
+<section class="student-feedback">
+    <div class="container">
+        <div class="section-header section-head-left aos " data-aos="fade-up">
+            <h2>Feedbacks</h2>
+        </div>
+        <div class="owl-carousel popular-course-slide-two owl-theme owl-loaded owl-drag aos " data-aos="fade-up">
+            <div class="student-profile">
+                <div class="student-profile-text text-center">
+                    <p>Eget aenean accumsan Search School, OLorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan Eget </p>
+                    <div class="rating">
+                        <i class="fa fa-star filled"></i>
+                        <i class="fa fa-star filled"></i>
+                        <i class="fa fa-star filled"></i>
+                        <i class="fa fa-star filled"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="student-profile-view">
+                    <div class="student-name text-center">
+                        <div class="student-img">
+                            <img src="{% static 'assets/img/user/user.jpg' %}" alt="">
+                        </div>
+                        <h3>
+                            <a href="profile.html">Williams Chals</a>
+                        </h3>
+                        <span>UI Designer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="student-profile">
+                <div class="student-profile-text text-center">
+                    <p>Eget aenean accumsan Search School, OLorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan Eget </p>
+                    <div class="rating">
+                        <i class="fa fa-star filled"></i>
+                        <i class="fa fa-star filled"></i>
+                        <i class="fa fa-star filled"></i>
+                        <i class="fa fa-star filled"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="student-profile-view">
+                    <div class="student-name text-center">
+                        <div class="student-img">
+                            <img src="{% static 'assets/img/user/user2.jpg' %}" alt="">
+                        </div>
+                        <h3>
+                            <a href="profile.html">David Lee</a>
+                        </h3>
+                      <span>php Expert </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- /Student Feedback
+
+
+
+
+
+
+
+
+
+{% endblock content %}

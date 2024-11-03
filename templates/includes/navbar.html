@@ -1,0 +1,140 @@
+
+{% load static %}
+
+<!-- Header -->
+<header class="header">
+    <div class="header-fixed">
+    <nav class="navbar navbar-expand-lg header-nav">
+        <div class="navbar-header">
+            <a id="mobile_btn" href="javascript:void(0);">
+                <span class="bar-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+            <a href="{% url 'home' %}" class="navbar-brand logo">
+                <img class="widthh90" src="{% static 'assets/img/DataNexus-logo-56.png' %}" class="img-fluid" alt="Logo">
+            </a>
+        </div>
+        <div class="main-menu-wrapper">
+            <div class="menu-header">
+                <a href="{% url 'home' %}" class="menu-logo">
+                    <img class="widthh90" src="{% static 'assets/img/DataNexus-logo-56.png' %}" class="img-fluid" alt="Logo">
+                </a>
+                <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+            <ul class="main-nav">
+                <!-- <i class="fas fa-chevron-down"></i> has-submenu-->
+                <li class=" {% if '/home/' in request.path %} active {% endif %} " >
+                    <a href="{% url 'home' %}">Home </a>
+                </li>
+               
+                <li class=" {% if '/about/' in request.path %}active{% endif %} "> <!-- has-submenu -->
+                    <a href="{% url 'about' %}">About </a>
+                    <!-- <ul class="submenu">
+                        <li><a href="dashboard.html">Mentor Dashboard</a></li>
+                        <li><a href="bookings.html">Bookings</a></li>
+                        <li><a href="schedule-timings.html">Schedule Timing</a></li>
+                        <li><a href="mentee-list.html">Mentee List</a></li>
+                        <li><a href="profile-mentee.html">Mentee Profile</a></li>
+                        <li class="has-submenu">
+                            <a href="blog.html">Blog</a>
+                            <ul class="submenu">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-details.html">Blog View</a></li>
+                                <li><a href="add-blog.html">Add Blog</a></li>
+                                <li><a href="edit-blog.html">Edit Blog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="invoices.html">Invoices</a></li>
+                        <li><a href="profile-settings.html">Profile Settings</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="mentor-register.html">Mentor Register</a></li>
+                    </ul> -->
+                </li>	
+                
+                <li class="has-submenu  {% if '/services/' in request.path %}active{% endif %}">
+                    <a href="#">Services <i class="fas fa-chevron-down"></i></i><!--  --></a>
+                    <ul class="submenu">
+                        <!-- <li class="has-submenu">
+                            <a href="#">Mentors</a>
+                            <ul class="submenu">
+                                <li><a href="map-grid.html">Map Grid</a></li>
+                                <li><a href="map-list.html">Map List</a></li>
+                            </ul>
+                        </li> -->
+
+                        {% for i in allServices %}
+                        <li>
+                            <a href="{% url 'single_service' i.service.slug %}">{{ i.service.title }}</a>
+                        </li>
+                        {% endfor %}
+
+                        <!-- <li><a href="#">Graphics Design</a></li> -->
+
+                        <!-- <li><a href="#">Graphics Design</a></li>
+                        <li><a href="#">Content Writing</a></li>
+                        <li><a href="#">Consultancy</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Database Administration</a></li>
+                        <li><a href="#">Web Apps </a></li>
+                        <li><a href="#">IT Security</a></li>
+                        <li><a href="#">Mobile Apps</a></li> -->
+
+                        <!-- <li><a href="profile-settings-mentee.html">Profile Settings</a></li>
+                        <li><a href="change-password.html">Change Password</a></li> -->
+                    </ul>
+                </li>	
+               
+                <li class=" {% if '/projects/' in request.path %}active{% endif %}">     <!-- has-submenu  -->
+                    <a href="{% url 'projects' %}">Projects </a>
+                    <!-- <ul class="submenu">
+                        <li><a href="voice-call.html">Voice Call</a></li>
+                        <li><a href="video-call.html">Video Call</a></li>
+                        <li><a href="search.html">Search Mentors</a></li>
+                        <li><a href="components.html">Components</a></li>
+                        <li class="has-submenu">
+                            <a href="invoices.html">Invoices</a>
+                            <ul class="submenu">
+                                <li><a href="invoices.html">Invoices</a></li>
+                                <li><a href="invoice-view.html">Invoice View</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blank-page.html">Starter Page</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="forgot-password.html">Forgot Password</a></li>
+                    </ul> -->
+                </li>
+                <!-- <li class="has-submenu">
+                    <a href="">Blog <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="blog-list.html">Blog List</a></li>
+                        <li><a href="blog-grid.html">Blog Grid</a></li>
+                        <li><a href="blog-details.html">Blog Details</a></li>
+                    </ul>
+                </li> -->
+                <li class="{% if '/contact/' in request.path %}active{% endif %}">
+                    <a href="{% url 'contact' %}" >Contact Us</a>
+                </li>
+                <!-- <li class="login-link">
+                    <a href="#">Login / Signup</a>
+                </li> -->
+            </ul>		 
+        </div>		 
+        <ul class="nav header-navbar-rht">
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link header-login" href="#">Register</a>
+            </li> -->
+        </ul>
+    </nav>
+    </div>
+</header>
+<!-- /Header -->

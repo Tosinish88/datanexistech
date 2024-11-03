@@ -1,0 +1,185 @@
+
+{% load static %}
+
+<!-- Footer -->
+<footer class="footer">
+				
+    <!-- Footer Top -->
+   
+    <div class="footer-top aos" > <!-- data-aos="fade-up" -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                
+                    <!-- Footer Widget -->
+                    <div class="footer-widget footer-about">
+                        <div class="footer-logo">
+                            <img class="widthh90" src="{% static 'assets/img/DataNexus-logo.png' %}" alt="logo">
+                        </div>
+                        <div class="footer-about-content">
+                            <p>
+                                We offer dependable, scalable, and secure data-driven IT solutions tailored for both B2B and B2C contexts.
+                            </p>
+                            <div class="social-icon">
+                                <ul>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Footer Widget -->
+                    
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                
+                    <!-- Footer Widget -->
+                    <div class="footer-widget footer-menu">
+                        <h2 class="footer-title">Top</h2>
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <!-- <li><a href="#">Services</a></li> -->
+                            <li><a href="{% url 'projects' %}">Projects</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                            <!-- <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li> -->
+                        </ul>
+                    </div>
+                    <!-- /Footer Widget -->
+                    
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                
+                    <!-- Footer Widget -->
+                    <div class="footer-widget footer-menu">
+                        <h2 class="footer-title">Services</h2>
+                        <ul>
+                            <!-- <li><a href="appointments.html">Appointments</a></li> -->
+                            {% for i in allServices %}
+                            <li><a href="{% url 'single_service' i.service.slug %}">{{i.service.title}}</a></li>
+                            {%endfor%}
+                            <!-- <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li> -->
+                            <!-- <li><a href="dashboard.html">Mentor Dashboard</a></li> -->
+                        </ul>
+                    </div>
+                    <!-- /Footer Widget -->
+                    
+                </div>
+
+                
+                
+                <div class="col-lg-3 col-md-6">
+                    <!-- Footer Widget -->
+                    <div class="footer-widget footer-contact">
+                        <h2 class="footer-title">Contact Us</h2>
+                        <div class="footer-contact-info">
+                            <div class="footer-address">
+                                <span><i class="fas fa-map-marker-alt"></i></span>
+                                <p>Grand Anse<br>St George, Grenada. W.I. </p>
+                            </div>
+                            <p>
+                                <i class="fas fa-phone-alt"></i>
+                                +1 473 419 9682
+                            </p>
+                            <p class="mb-0">
+                                <i class="fas fa-envelope"></i>
+                                info@datanexistech.com
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Footer Widget -->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Footer Top -->
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container-fluid">
+        
+            <!-- Copyright -->
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="copyright-text">
+                            <p class="mb-0">&copy; 2024 DataNexisTech. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Copyright -->
+            
+        </div>
+    </div>
+    <!-- /Footer Bottom -->
+    
+</footer>
+<!-- /Footer -->
+
+<div id="google_translate_element" class="googTrans"></div>
+
+</div>
+<!-- /Main Wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %} "></script>
+
+<!-- Owl Carousel -->
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>		
+
+<!-- Aos -->
+<script src="{% static 'assets/plugins/aos/aos.js' %}"></script>
+
+<!-- Custom JS -->
+<script src="{% static 'assets/js/script.js' %}"></script>
+
+<!-- <script src="{% static 'assets/plugins/theia-sticky-sidebar/maps/theia-sticky-sidebar.js' %}"></script> -->
+
+
+<!-- counterup JS -->
+<script src="{% static 'assets/js/jquery.waypoints.js' %}"></script>
+<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+
+<!-- Slick Slider -->
+<script src="{% static 'assets/plugins/slick/slick.js' %}"></script>
+<!-- --------------------------------==== -->
+
+
+
+
+
+</div>
+
+    <!-- GOOGLE TRANSLATE CDN -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    </body>
+
+</html>
