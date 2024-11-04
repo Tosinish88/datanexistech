@@ -6,10 +6,6 @@ immigration_app/.env
 __pycache__
 media
 
-
-# db
-db.sqlite3
-
 # Backup files # 
 *.bak 
 
