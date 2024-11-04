@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from pages.models import Service
 
 # Create your views here.
