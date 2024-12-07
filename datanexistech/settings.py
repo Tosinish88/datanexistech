@@ -27,7 +27,12 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://datanexis-production.up.railway.app', '*']
+ALLOWED_HOSTS = [
+    'https://datanexis-production.up.railway.app',
+    'datanexis-tech.com',
+    '127.0.0.1',
+    'localhost'
+    ]
 
 
 # Application definition
