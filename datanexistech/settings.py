@@ -28,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
-    'https://datanexis-production.up.railway.app',
+    'datanexis-production.up.railway.app',
     'web-staging-075a.up.railway.app'
     ]
 
