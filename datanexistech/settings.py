@@ -29,11 +29,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
     'https://datanexis-production.up.railway.app',
-    '*'
-    # 'datanexis-tech.com',
-    # '127.0.0.1',
-    # 'localhost',
-    # 'https://web-staging-075a.up.railway.app/'
+    'https://web-staging-075a.up.railway.app/'
     ]
 
 
