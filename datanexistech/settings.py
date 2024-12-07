@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
-from decouple import config
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,13 +27,10 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = [
-    'web-staging-075a.up.railway.app'
-    ]
+ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', cast=Csv())
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://web-staging-075a.up.railway.app',
-]
+CSRF_TRUSTED_ORIGINS = config('DJANGO_CSRF_TRUSTED_ORIGINS', cast=Csv())
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -115,6 +112,7 @@ CSRF_COOKIE_SECURE = True  # Ensures the CSRF cookie is only sent over HTTPS
 SESSION_COOKIE_SECURE = True  # Ensures session cookies are only sent over HTTPS
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_SSL_REDIRECT = True
 
 
 # Password validation
