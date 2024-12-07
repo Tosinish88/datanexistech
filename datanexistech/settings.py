@@ -28,11 +28,12 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
-    'datanexis-production.up.railway.app',
     'web-staging-075a.up.railway.app'
     ]
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-staging-075a.up.railway.app',
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -108,10 +109,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://web-staging-075a.up.railway.app',
-    'https://datanexis-production.up.railway.app'
-]
+
 
 CSRF_COOKIE_SECURE = True  # Ensures the CSRF cookie is only sent over HTTPS
 SESSION_COOKIE_SECURE = True  # Ensures session cookies are only sent over HTTPS
