@@ -28,7 +28,12 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config('DEBUG')
 
 # Temporary testing setup
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ALLOWED_HOSTS = [
+    'web-staging-075a.up.railway.app',
+    'datanexis-production.up.railway.app',
+    'datanexis-tech.com',
+]
+
 CSRF_TRUSTED_ORIGINS = [
     'https://web-staging-075a.up.railway.app',
     'https://datanexis-production.up.railway.app',
