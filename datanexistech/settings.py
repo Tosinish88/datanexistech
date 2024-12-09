@@ -28,11 +28,18 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config('DEBUG')
 
 # Temporary testing setup
-ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())
-#CSRF_TRUSTED_ORIGINS = config("DJANGO_CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1,http://localhost", cast=Csv())
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-staging-075a.up.railway.app',
+    'https://datanexis-production.up.railway.app',
+    'https://datanexis-tech.com',
+]
 
 # Debug output to verify
 print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
+print("ALLOWED_HOSTS at runtime:", ALLOWED_HOSTS)
+print("Incoming Host Header:", os.getenv('HTTP_HOST'))
+
 #print("CSRF_TRUSTED_ORIGINS:", CSRF_TRUSTED_ORIGINS)
 
 
@@ -101,10 +108,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Csrf and sesssion configurations
-CSRF_COOKIE_SECURE = True  # Ensures the CSRF cookie is only sent over HTTPS
-SESSION_COOKIE_SECURE = True  # Ensures session cookies are only sent over HTTPS
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
+# CSRF_COOKIE_SECURE = True  # Ensures the CSRF cookie is only sent over HTTPS
+# SESSION_COOKIE_SECURE = True  # Ensures session cookies are only sent over HTTPS
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
