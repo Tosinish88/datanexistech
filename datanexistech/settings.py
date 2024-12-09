@@ -26,9 +26,15 @@ SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
+from decouple import config, Csv
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="127.0.0.1,localhost").split(',')
-CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1,http://localhost").split(',')
+# Clean trailing semicolons and whitespace
+ALLOWED_HOSTS = [host.strip().rstrip(";") for host in config("ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())]
+CSRF_TRUSTED_ORIGINS = [origin.strip().rstrip(";") for origin in config("CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1,http://localhost", cast=Csv())]
+
+print("Cleaned ALLOWED_HOSTS:", ALLOWED_HOSTS)
+print("Cleaned CSRF_TRUSTED_ORIGINS:", CSRF_TRUSTED_ORIGINS)
+
 print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
 print("CSRF_TRUSTED_ORIGINS:", CSRF_TRUSTED_ORIGINS)
 print("SECRET_KEY:", SECRET_KEY)
