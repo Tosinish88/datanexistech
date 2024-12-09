@@ -27,10 +27,11 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-from decouple import config, Csv
+from decouple import config
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
-CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", cast=Csv())
+ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(',')
+CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS").split(',')
+
 
 
 print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
