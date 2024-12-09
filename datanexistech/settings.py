@@ -27,23 +27,13 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-# Temporary testing setup
-ALLOWED_HOSTS = [
-    'web-staging-075a.up.railway.app',
-    'datanexis-production.up.railway.app',
-    'datanexis-tech.com',
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://web-staging-075a.up.railway.app',
-    'https://datanexis-production.up.railway.app',
-    'https://datanexis-tech.com',
-]
+# Use environment variables for ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS
+ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())
+CSRF_TRUSTED_ORIGINS = config("DJANGO_CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1,http://localhost", cast=Csv())
 
 # Debug output to verify
 print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
 print("ALLOWED_HOSTS at runtime:", ALLOWED_HOSTS)
-print("Incoming Host Header:", os.getenv('HTTP_HOST'))
 
 #print("CSRF_TRUSTED_ORIGINS:", CSRF_TRUSTED_ORIGINS)
 
