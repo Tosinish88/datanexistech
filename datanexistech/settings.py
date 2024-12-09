@@ -31,15 +31,6 @@ DEBUG = config('DEBUG')
 ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())
 CSRF_TRUSTED_ORIGINS = config("DJANGO_CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1,http://localhost", cast=Csv())
 
-# Debug output to verify
-print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
-print("CSRF_TRUSTED_ORIGINS at runtime:", CSRF_TRUSTED_ORIGINS)
-
-#print("CSRF_TRUSTED_ORIGINS:", CSRF_TRUSTED_ORIGINS)
-
-
-
-
 
 # Application definition
 
@@ -107,6 +98,11 @@ CSRF_COOKIE_SECURE = True  # Ensures the CSRF cookie is only sent over HTTPS
 SESSION_COOKIE_SECURE = True  # Ensures session cookies are only sent over HTTPS
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_SSL_REDIRECT = True  # Redirects HTTP to HTTPS
+SECURE_HSTS_SECONDS = 31536000  # Enforce HTTPS for 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to subdomains
+SECURE_HSTS_PRELOAD = True  # Allow the domain to be preloaded in browsers
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -149,6 +145,3 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'datanexistech/static'),)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-DISABLE_COLLECTSTATIC=1
