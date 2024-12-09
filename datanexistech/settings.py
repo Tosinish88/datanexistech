@@ -29,8 +29,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 from decouple import config, Csv
 
-ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())
-CSRF_TRUSTED_ORIGINS = config("DJANGO_CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1,http://localhost", cast=Csv())
+ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", cast=Csv())
+CSRF_TRUSTED_ORIGINS = config("DJANGO_CSRF_TRUSTED_ORIGINS", cast=Csv())
 
 
 print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
