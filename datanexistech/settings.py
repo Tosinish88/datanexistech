@@ -29,8 +29,9 @@ DEBUG = config('DEBUG')
 from decouple import config
 
 # Clean trailing semicolons and whitespace
-ALLOWED_HOSTS = config("ALLOWED_HOSTS")
-CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS")
+ALLOWED_HOSTS = [config("ALLOWED_HOSTS")]
+CSRF_TRUSTED_ORIGINS = [config("CSRF_TRUSTED_ORIGINS")]
+
 
 
 
