@@ -29,11 +29,11 @@ DEBUG = config('DEBUG')
 
 # Temporary testing setup
 ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())
-CSRF_TRUSTED_ORIGINS = config("DJANGO_CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1,http://localhost", cast=Csv())
+#CSRF_TRUSTED_ORIGINS = config("DJANGO_CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1,http://localhost", cast=Csv())
 
 # Debug output to verify
 print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
-print("CSRF_TRUSTED_ORIGINS:", CSRF_TRUSTED_ORIGINS)
+#print("CSRF_TRUSTED_ORIGINS:", CSRF_TRUSTED_ORIGINS)
 
 
 
