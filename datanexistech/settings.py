@@ -26,11 +26,15 @@ SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
-from decouple import config
 
-# Clean trailing semicolons and whitespace
-ALLOWED_HOSTS = [config("ALLOWED_HOSTS")]
-CSRF_TRUSTED_ORIGINS = [config("CSRF_TRUSTED_ORIGINS")]
+# Temporary testing setup
+ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())
+CSRF_TRUSTED_ORIGINS = config("DJANGO_CSRF_TRUSTED_ORIGINS", default="http://127.0.0.1,http://localhost", cast=Csv())
+
+# Debug output to verify
+print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
+print("CSRF_TRUSTED_ORIGINS:", CSRF_TRUSTED_ORIGINS)
+
 
 
 
