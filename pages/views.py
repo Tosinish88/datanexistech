@@ -1,7 +1,8 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from pages.models import Service
 from django.contrib import messages
-from .forms import ContactForm
+from .forms import ContactForm, SubscriptionForm
 
 # Create your views here.
 
@@ -45,4 +46,25 @@ def single_service(request, slug):
     }
     return render(request, 'pages/single_service.html', context)
 
+
+def subscribe(request):
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            try:
+                # Save the subscription
+                form.save()
+                messages.success(request, 'You have subscribed successfully!')
+                # Redirect to the same page to clear the form
+                return redirect(f'{request.path}#services') # return to the exact part of the page
+            except Exception:
+                messages.error(request, 'This email is already subscribed.')
+        else:
+            messages.error(request, 'Please enter a valid email address.')
+            return redirect(f'{request.path}#services')
+    else:
+        form = SubscriptionForm()
+
+    # Render a fresh form if it's a GET request or after redirect
+    return render(request, 'pages/about.html', {'form': form})
 

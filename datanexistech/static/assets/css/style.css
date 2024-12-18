@@ -4145,7 +4145,7 @@ html.menu-opened body {
 .course-text-bg:focus {
 	background: #6255a4;
     border: 1px solid #6255a4;
-	color: #fff;
+	color: #000000;
 }
 .new-course-img img {
 	width: 100%;

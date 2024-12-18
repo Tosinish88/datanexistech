@@ -11918,6 +11918,11 @@ div.dataTables_wrapper div.dataTables_filter input{
 	color: #707070;
 }
 
+#subscribe-form {
+    scroll-margin-top: 100px; /* Adjust this value to fit your header's height */
+}
+
+
 /*-----------------
 	66. Work Flow
 -----------------------*/

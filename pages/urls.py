@@ -6,6 +6,7 @@ from .views import(
     projects,
     about,
     single_service,
+    subscribe,
 )
 
 
@@ -16,6 +17,7 @@ urlpatterns = [
     path('projects/', projects, name='projects'), 
     path('about/', about, name='about'), 
     path('single_service/<str:slug>/', single_service, name='single_service'), 
+    path('subscribe/', subscribe, name='subscribe'),
     # path('projects/', projects, name='projects'), 
     # path('projects/', projects, name='projects'), 
 ]
