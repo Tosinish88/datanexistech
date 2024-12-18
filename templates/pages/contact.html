@@ -46,61 +46,80 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="col-md-6 d-flex align-items-center">
-                <div class="account-content">
-                    <div class="account-box">
-                        <div class="login-right">
-                            <div class="login-header text-center">
-                                <h3><span>Message Us</span></h3>
-                                <p class="text-muted">We want to hear from you</p>
-                            </div>
+<!-- Contact Form -->
+<div class="col-md-6 d-flex align-items-center">
+    <div class="account-content">
+        <div class="account-box">
+            <div class="login-right">
+                <div class="login-header text-center">
+                    <h3><span>Message Us</span></h3>
+                    <p class="text-muted">We want to hear from you</p>
+                </div>
 
-                            <!-- Form Feedback Messages -->
-                            {% if messages %}
-                                <div class="row">
-                                    <div class="col-12">
-                                        {% for message in messages %}
-                                            <div class="alert alert-{{ message.tags }} form-group">
-                                                {{ message }}
-                                            </div>
-                                        {% endfor %}
-                                    </div>
+                <!-- Form Feedback Messages -->
+                {% if messages %}
+                    <div class="row">
+                        <div class="col-12">
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }} form-group">
+                                    {{ message }}
                                 </div>
-                            {% endif %}
-
-                            <!-- Contact Form -->
-                            <form method="post" action="{% url 'contact' %}">
-                                {% csrf_token %}
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label">First Name:</label>
-                                            <input id="first-name" type="text" class="form-control" name="first_name" placeholder="Enter your first name">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Last Name:</label>
-                                            <input id="last-name" type="text" class="form-control" name="last_name" placeholder="Enter your last name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">Email Address:</label>
-                                    <input id="email" type="email" class="form-control" name="email" placeholder="Enter your email">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">Message:</label>
-                                    <textarea rows="4" class="form-control" name="message" placeholder="Type your message..."></textarea>
-                                </div>
-                                <button class="btn btn-primary login-btn" type="submit">Send</button>
-                            </form>
-                            <!-- /Contact Form -->
+                            {% endfor %}
                         </div>
                     </div>
-                </div>
+                {% endif %}
+
+                <!-- Custom Contact Form -->
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <!-- First Name -->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="id_firstname">First Name:</label>
+                                <input id="firstname" type="text" class="form-control" name="firstname" required>
+                                {% if form.firstname.errors %}
+                                    <div class="text-danger">{{ form.firstname.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="id_lastname">Last Name:</label>
+                                <input id="lastname" type="text" class="form-control" name="lastname" required>
+                                {% if form.lastname.errors %}
+                                <div class="text-danger">{{ form.lastname.errors }}</div>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="form-group">
+                        <label class="form-control-label" for="id_email">Email Address:</label>
+                        <input id="email" type="email" class="form-control" name="email" required>
+                        {% if form.email.errors %}
+                        <div class="text-danger">{{ form.email.errors }}</div>
+                    {% endif %}
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label class="form-control-label" for="id_message">Message:</label>
+                        <textarea id="message" rows="4" class="form-control" name="message" placeholder="Type your message..." required></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="btn btn-primary login-btn" type="submit">Send</button>
+                </form>
+                <!-- /Custom Contact Form -->
             </div>
+        </div>
+    </div>
+</div>
+
             <!-- /Contact Form -->
         </div>
     </div>
