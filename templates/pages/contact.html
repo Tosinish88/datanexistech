@@ -91,7 +91,10 @@
                         <label for="message">Message:</label>
                         <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
                     </div>
-                
+
+                    <!-- recaptcha -->
+                    <div class="g-recaptcha" data-sitekey="6Lf92bYqAAAAABp6rgxAcTxvmTRb5Pu2WAp1RFb_"></div>
+
                     <button type="submit" class="btn btn-primary">Send</button>
                 </form>
                 <!-- /Custom Contact Form -->
@@ -108,5 +111,7 @@
 <!-- Google Map -->
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.5981221345287!2d-61.75846353041294!3d12.016477899263634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c382117b54557bd%3A0x9c6506c65081ba2c!2sBenoit%20Apartments!5e0!3m2!1sen!2s!4v1730682370319!5m2!1sen!2s" 
     width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 {% endblock content %}
