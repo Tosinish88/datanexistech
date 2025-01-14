@@ -8,7 +8,6 @@ from .forms import ContactForm, SubscriptionForm
 
 
 def home(request):
-
     return render(request, 'home.html')
 
 def contact(request):
@@ -67,4 +66,23 @@ def subscribe(request):
 
     # Render a fresh form if it's a GET request or after redirect
     return render(request, 'pages/about.html', {'form': form})
+
+
+
+def custom_error_view(request, exception=None, error_code=500, error_message="Internal Server Error"):
+    context = {
+        "error_code": error_code,
+        "error_message": error_message,
+    }
+    return render(request, 'pages/error.html', context, status=error_code)
+
+def custom_400_view(request, exception=None):
+    return custom_error_view(request, exception, error_code=400, error_message="Bad Request")
+
+def custom_404_view(request, exception=None):
+    return custom_error_view(request, exception, error_code=404, error_message="Page Not Found")
+
+def custom_500_view(request):
+    return custom_error_view(request, error_code=500, error_message="Internal Server Error")
+
 

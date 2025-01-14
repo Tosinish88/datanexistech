@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls.static import static
+from django.conf.urls import handler404
 from django.conf import settings
 
 urlpatterns = [
@@ -24,3 +25,7 @@ urlpatterns = [
     path('', include('pages.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler400 = 'pages.views.custom_400_view'
+handler404 = 'pages.views.custom_404_view'
+handler500 = 'pages.views.custom_500_view'
