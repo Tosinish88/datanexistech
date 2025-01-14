@@ -29,11 +29,11 @@
                             <div class="footer-contact-info fs-5">
                                 <div class="footer-address">
                                     <span><i class="fas fa-map-marker-alt"></i></span>
-                                    <p>Grand Anse, St George, Grenada. W.I.</p>
+                                    <p>Beausejour, St George, Grenada. W.I.</p>
                                 </div>
                                 <p>
                                     <i class="fas fa-phone-alt"></i>
-                                    +1 473 419 9682
+                                    +1 473 534 5782
                                 </p>
                                 <p class="mb-0">
                                     <i class="fas fa-envelope"></i>
@@ -70,49 +70,29 @@
                 {% endif %}
 
                 <!-- Custom Contact Form -->
-                <form method="post" action="{% url 'contact' %}">
-                    {% csrf_token %}
+                <form action="https://formspree.io/f/mdkkbvev" method="POST">
                     <div class="row">
-                        <!-- First Name -->
                         <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="id_firstname">First Name:</label>
-                                <input id="firstname" type="text" class="form-control" name="firstname" required>
-                                {% if form.firstname.errors %}
-                                    <div class="text-danger">{{ form.firstname.errors }}</div>
-                                {% endif %}
-                            </div>
+                            <label for="firstname">First Name:</label>
+                            <input id="firstname" type="text" name="firstname" class="form-control" required>
                         </div>
-
-                        <!-- Last Name -->
                         <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="id_lastname">Last Name:</label>
-                                <input id="lastname" type="text" class="form-control" name="lastname" required>
-                                {% if form.lastname.errors %}
-                                <div class="text-danger">{{ form.lastname.errors }}</div>
-                            {% endif %}
-                            </div>
+                            <label for="lastname">Last Name:</label>
+                            <input id="lastname" type="text" name="lastname" class="form-control" required>
                         </div>
                     </div>
-
-                    <!-- Email Address -->
+                
                     <div class="form-group">
-                        <label class="form-control-label" for="id_email">Email Address:</label>
-                        <input id="email" type="email" class="form-control" name="email" required>
-                        {% if form.email.errors %}
-                        <div class="text-danger">{{ form.email.errors }}</div>
-                    {% endif %}
+                        <label for="email">Email Address:</label>
+                        <input id="email" type="email" name="email" class="form-control" required>
                     </div>
-
-                    <!-- Message -->
+                
                     <div class="form-group">
-                        <label class="form-control-label" for="id_message">Message:</label>
-                        <textarea id="message" rows="4" class="form-control" name="message" placeholder="Type your message..." required></textarea>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
                     </div>
-
-                    <!-- Submit Button -->
-                    <button class="btn btn-primary login-btn" type="submit">Send</button>
+                
+                    <button type="submit" class="btn btn-primary">Send</button>
                 </form>
                 <!-- /Custom Contact Form -->
             </div>
